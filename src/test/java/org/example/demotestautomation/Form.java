@@ -36,6 +36,7 @@ public class Form {
         } else {
             System.out.println("Test failed");
         }
+
         // Close the browser
         //driver.quit();
 

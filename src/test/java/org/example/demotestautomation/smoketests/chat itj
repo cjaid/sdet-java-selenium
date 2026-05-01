@@ -1,0 +1,45 @@
+1.
+- No estoy trabajando, en IBM me liquidaron el 31 de marzo del 2026, aún cotizo en el IMSS con IBM hasta mediados de mayo.
+- Mi salario era de $28,600.00 mxn brutos, pero tenía bonos, 30 días de aguinaldo, utilidades, fondo de ahorro, hice el calculo y netos al mes eran 31,000-32,000.
+- Java intermedio, solo ejecutaba casos de prueba automatizados, ya que ya estaban desarrollados, había ocasiones que se rompía el código y si le hacía mantenimiento sobre todo a los step definitions en cucumber, buscar los web elements e insertarles data con csv. En cisco usaba también java con test project y test sigma para android y ios estaban basados en appium y a veces igual usaba lógica básica de java. Actualmente estoy repasando java y selenium java.
+- AWS tengo la certificación de cloud practitioner, me estaba preparando para solutions architect pero salí de IBM, sé como se maneja IAM, S3, EC2, RDS, AURORA, GLOBAL ACCELERATOR, ROUTE 53, VPC, NETWORKING, DEQUE CON SNS Y SQS, pero nunca he desarrollado o probado en producción o pre producción, solo laboratorios para certificaciones. Si he probado cloud en pre producción pero fue migracón de nube de lago de datos de hue/hive a snowflake, la prueba era que los datos de hue/hive mediante queries de sql, fueran los mismos registros en snowflake.
+
+
+Hi Betty Filatoff,
+
+Thank you for reaching out and for considering my profile for the Automation Test Engineer role. I’m very interested in continuing the process.
+
+1. Describe your experience as an Automation Test Engineer
+I have hands-on experience working with automated testing using frameworks based on Java and Python, primarily focused on executing and maintaining existing test automation frameworks. In my previous role, I worked with Cucumber-based frameworks, where I maintained step definitions, updated test flows, and handled test data using CSV files. I also investigated and fixed issues when tests failed, including locating web elements and updating automation scripts.
+
+Additionally, I have experience working with mobile automation tools such as TestProject and TestSigma, based on Appium, for both Android and iOS testing. I’m currently strengthening my skills in Selenium with Java, focusing on building and improving automation frameworks.
+
+2. What automation testing frameworks have you used?
+I have worked with Selenium and Cucumber (BDD) for Java and Python, and have basic experience with TestNG and JUnit. I have also used TestProject and TestSigma (Appium-based) for mobile automation (Android and iOS). I’m familiar with maintaining test scripts, understanding framework structure, and improving test stability.
+
+3. Cloud experience (AWS/Azure)
+I hold the AWS Cloud Practitioner certification and have hands-on experience with core AWS services such as IAM, S3, EC2, RDS, Aurora, VPC, Route 53, and messaging services like SNS and SQS. While most of my experience comes from labs and training environments, I have also participated in cloud-related validation work, such as data migration testing between Hive and Snowflake, ensuring data consistency through SQL queries.
+
+General Questions
+
+Are you currently working?
+I am currently not working. My previous role ended on April 1st, 2026.
+Current salary (MXN, monthly gross):
+$28,600 MXN gross monthly, plus additional benefits and bonuses.
+Salary expectations (MXN, monthly gross):
+I’m looking for a range between $30,000 – $40,000 MXN gross monthly, depending on the overall compensation package.
+Availability to join:
+I am available to join immediately.
+Why are you looking for a new opportunity?
+I’m looking for an opportunity to grow as an Automation Test Engineer, gain more hands-on experience building automation frameworks, and continue developing my skills in Java and test automation.
+English level (0–10):
+9/10 (C1 certified)
+US Visa and passport:
+I currently have a valid passport. I do not have a US visa yet, but I have an appointment scheduled for a B1/B2 visa in June 2026.
+How did you hear about ITJ?
+I heard about ITJ through LinkedIn, where I was contacted regarding this opportunity.
+
+Thank you again, and I look forward to your response.
+
+Best regards,
+Carlos Jaid Nieves
