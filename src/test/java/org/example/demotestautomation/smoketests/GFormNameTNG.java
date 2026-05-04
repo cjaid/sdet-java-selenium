@@ -2,52 +2,48 @@ package org.example.demotestautomation.smoketests;
 
 import org.example.demotestautomation.utilities.CsvReader;
 import org.example.demotestautomation.utilities.ExcelReader;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.internal.invokers.Arguments;
 
-
-import javax.imageio.IIOException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.Arguments;
 
-
-public class GFormName {
+public class GFormNameTNG {
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>(); // improved for parallel
     private String webURL= "https://workspace.google.com/intl/en-US/gmail/";
     private String firstName;
     private String lastName;
-    //private CsvReader reader = new CsvReader("/Users/cjaid/Documents/SDET/Day 1/demo-test-automation/src/test/java/org/example/demotestautomation/utilities/enteryourname.csv");
+
     /*
     public static void main(String[] args){
-        CsvReader reader = new CsvReader("/Users/cjaid/Documents/SDET/Day 1/demo-test-automation/src/test/java/org/example/demotestautomation/utilities/enteryourname.csv");
+        ExcelReader excelReader = new ExcelReader("src/test/java/org/example/demotestautomation/utilities/enteryourname.xlsx",
+                "Sheet1");
 
-
-        try{
-            reader.printAll();
-        } catch(IOException e){
+        try {
+            excelReader.printAll();
+        } catch (IOException e) {
             System.out.println(e);
-        }finally {
-            reader = null;
         }
+
 
     }*/
 
-    @ParameterizedTest
-    @MethodSource("getData")
+
+    @Test (dataProvider = "excelData")
     public void setNameAndLastName(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -88,31 +84,35 @@ public class GFormName {
                 ExpectedConditions.visibilityOfElementLocated(monthDropdown)
         );
 
-        Assertions.assertTrue(month.isDisplayed());
+        //Assertions.assertTrue(month.isDisplayed());
+        Assert.assertTrue(month.isDisplayed());
+
 
     }
 
 
-    public static Stream<org.junit.jupiter.params.provider.Arguments> getData() throws Exception {
-        CsvReader reader = new CsvReader("src/test/java/org/example/demotestautomation/utilities/enteryourname.csv");
-        //ExcelReader excelReader = new ExcelReader("src/test/java/org/example/demotestautomation/utilities/enteryourname.xlsx", "Sheet1");
+    @DataProvider(name= "excelData")
+    public static Object[][] getData() throws Exception {
+        //CsvReader reader = new CsvReader("src/test/java/org/example/demotestautomation/utilities/enteryourname.csv");
+        ExcelReader excelReader = new ExcelReader("src/test/java/org/example/demotestautomation/utilities/enteryourname.xlsx", "Sheet1");
+        List<String[]> data = excelReader.readAll();
 
-        //List<String[]> data = reader.readAll();
+        Object[][] result = new Object[data.size()-1][2]; // skip header
 
-        List<String[]> data = null;
-        try{
-           data = reader.readAll();
-        } catch (IOException e) {
-           System.out.println(e);;
+        for(int i = 1; i < data.size(); i++){
+            result[i - 1][0] = data.get(i)[0]; // firstName
+            result[i - 1][1] = data.get(i)[1]; // lastName
+
         }
 
-        return data.stream().skip(1).map(row -> Arguments.of(row[0], row[1]));
+        return result;
     }
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp(){
         driver.set(new FirefoxDriver());
     }
+
 
     /*
     @Test
@@ -162,7 +162,8 @@ public class GFormName {
     }
      */
 
-    @AfterEach
+
+    @AfterMethod
     public void tearDown(){
         getDriver().quit();
         driver.remove();
@@ -172,4 +173,6 @@ public class GFormName {
     private WebDriver getDriver(){
         return driver.get();
     }
+
+
 }
