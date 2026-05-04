@@ -61,13 +61,12 @@ public class ATagsTest {
                 break;
             }
         }
-        Assert.assertTrue(found, "Not Founded");
+        Assert.assertTrue(found, "'For work' link was not found on the page");
     }
 
     @AfterMethod
     // we use drive quit() to
     public void tearDown(){
-
         getDriver().quit();
         //driver.close(); // only closes tab
         driver.remove(); // important cleanup for ThreadLocal

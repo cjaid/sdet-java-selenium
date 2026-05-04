@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Google Test Suite">
+<suite name="Google Test Suite" parallel="methods" thread-count="2">
     <test name="A tags">
         <classes>
             <class name="org.example.demotestautomation.smoketests.ATagsTest"/>
